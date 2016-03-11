@@ -1,0 +1,17 @@
+body {
+  	@include background-image(linear-gradient($sky-color 50%, $ground-color 50%));
+  		// http://compass-style.org/examples/compass/css3/gradient/
+	height: 100vh; //vertical height...may need browser support...
+}
+
+.ball {
+	animation-name: move;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes move {
+	from {translateX: 300px;}
+    to {translateX: 500px;}
+}
