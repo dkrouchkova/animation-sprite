@@ -7,18 +7,22 @@
   box-sizing: border-box;
 }
 
-body {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM2MmIwZDIiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzQ3OGU1MCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #62b0d2), color-stop(50%, #478e50));
-  background-image: -moz-linear-gradient(#62b0d2 50%, #478e50 50%);
-  background-image: -webkit-linear-gradient(#62b0d2 50%, #478e50 50%);
-  background-image: linear-gradient(#62b0d2 50%, #478e50 50%);
-  height: 65vh;
+.sky {
+  background: #62b0d2;
+  height: 50vh;
+  z-index: -1;
+  max-width: 100%;
 }
 
+.grass {
+  background: #478e50;
+  height: 50vh;
+  z-index: -1;
+  max-width: 100%;
+}
+
+/*-----BALL SLIDE/CAT WALK------*/
 .wrapper {
-  margin-top: 35vh;
   position: relative;
 }
 
@@ -53,5 +57,53 @@ body {
   }
   to {
     transform: translateX(500px);
+  }
+}
+/*-----CLOUDS------*/
+.cloud {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  background: transparent url("..//img/cloud.png") 0 0 no-repeat;
+}
+
+.cloud1 {
+  top: 10px;
+  z-index: 100;
+  -moz-animation: driftin 10s linear infinite;
+  -webkit-animation: driftin 10s linear infinite;
+  animation: driftin 10s linear infinite;
+}
+
+.cloud2 {
+  top: 40px;
+  z-index: 200;
+  -moz-animation: driftin 15s linear infinite backwards;
+  -webkit-animation: driftin 15s linear infinite backwards;
+  animation: driftin 15s linear infinite backwards;
+}
+
+@-moz-keyframes driftin {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(1550px);
+  }
+}
+@-webkit-keyframes driftin {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(1550px);
+  }
+}
+@keyframes driftin {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(1550px);
   }
 }

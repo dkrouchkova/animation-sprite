@@ -6,16 +6,33 @@
 	box-sizing: border-box;
 }
 
-body {
-  	@include background-image(linear-gradient($sky-color 50%, $ground-color 50%));
-  		// http://compass-style.org/examples/compass/css3/gradient/
-	height: 65vh; //vertical height...may need browser support...
+// .base {
+//   	@include background-image(linear-gradient($sky-color 50%, $ground-color 50%));
+//   		// http://compass-style.org/examples/compass/css3/gradient/
+// 	height: 65vh; //vertical height...may need browser support...
+// 	z-index: -1;
+// }
+
+.sky {
+	background: $sky-color;
+	height: 50vh;
+	z-index: -1;
+	max-width: 100%;
 }
 
+.grass {
+	background: $ground-color;
+	height: 50vh;
+	z-index: -1;
+	max-width: 100%;
+}
+
+
+/*-----BALL SLIDE/CAT WALK------*/
 .wrapper {
 	// margin: auto;
 	// width: 800px;
-	margin-top: 35vh;
+	// margin-top: 35vh;
 	position: relative;
 }
 
@@ -28,6 +45,7 @@ body {
 	// animation-duration: 1s;
 	// animation-timing-function: linear;
 	// animation-iteration-count: infinite;
+	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
 	@include animation(catwalk 2s 1 ease-in both);
 }
 
@@ -35,3 +53,35 @@ body {
 	from{transform: translateX(0px);}
     to{transform: translateX(500px);}
 }
+
+
+/*-----CLOUDS------*/
+
+.cloud {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	background: transparent url('..//img/cloud.png') 0 0 no-repeat;
+}
+
+.cloud1 {
+	top: 10px;
+	z-index: 100;
+	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
+	@include animation(driftin 10s linear infinite)
+}
+
+.cloud2 {
+	top: 40px;
+	z-index: 200;
+	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
+	@include animation(driftin 15s linear infinite backwards)
+}
+
+@include keyframes(driftin) {
+	from{transform: translateX(-1000px);}
+    to{transform: translateX(1550px);}
+}
+
+
+
