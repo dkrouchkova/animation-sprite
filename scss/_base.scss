@@ -1,17 +1,37 @@
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
   	@include background-image(linear-gradient($sky-color 50%, $ground-color 50%));
   		// http://compass-style.org/examples/compass/css3/gradient/
-	height: 100vh; //vertical height...may need browser support...
+	height: 65vh; //vertical height...may need browser support...
+}
+
+.wrapper {
+	// margin: auto;
+	// width: 800px;
+	margin-top: 35vh;
+	position: relative;
 }
 
 .ball {
-	animation-name: move;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+	position: relative;
+	top: 20px;
+	left: 20px;
+
+	// animation-name: move;
+	// animation-duration: 1s;
+	// animation-timing-function: linear;
+	// animation-iteration-count: infinite;
+	@include animation(catwalk 2s 1 ease-in both);
 }
 
-@keyframes move {
-	from {translateX: 300px;}
-    to {translateX: 500px;}
+@include keyframes(catwalk) {
+	from{transform: translateX(0px);}
+    to{transform: translateX(500px);}
 }
