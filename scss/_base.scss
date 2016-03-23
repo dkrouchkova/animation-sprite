@@ -1,3 +1,6 @@
+@import 'icon/*.png';
+@include all-icon-sprites;
+
 *,
 *:before,
 *:after {
@@ -16,44 +19,16 @@
 .sky {
 	background: $sky-color;
 	height: 50vh;
-	z-index: -1;
-	max-width: 100%;
+	z-index: -10;
+	max-width: 1350vh;
 }
 
 .grass {
 	background: $ground-color;
 	height: 50vh;
-	z-index: -1;
-	max-width: 100%;
+	z-index: -10;
+	max-width: 1350vh;
 }
-
-
-/*-----BALL SLIDE/CAT WALK------*/
-.wrapper {
-	// margin: auto;
-	// width: 800px;
-	// margin-top: 35vh;
-	position: relative;
-}
-
-.ball {
-	position: relative;
-	top: 20px;
-	left: 20px;
-
-	// animation-name: move;
-	// animation-duration: 1s;
-	// animation-timing-function: linear;
-	// animation-iteration-count: infinite;
-	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
-	@include animation(catwalk 2s 1 ease-in both);
-}
-
-@include keyframes(catwalk) {
-	from{transform: translateX(0px);}
-    to{transform: translateX(500px);}
-}
-
 
 /*-----CLOUDS------*/
 
@@ -62,6 +37,7 @@
 	height: 200px;
 	position: absolute;
 	background: transparent url('..//img/cloud.png') 0 0 no-repeat;
+	background-size: 308px 200px;
 }
 
 .cloud1 {
@@ -79,9 +55,70 @@
 }
 
 @include keyframes(driftin) {
-	from{transform: translateX(-1000px);}
-    to{transform: translateX(1550px);}
+	from{transform: translateX(2000px);}
+    to{transform: translateX(-500px);}
 }
 
 
+/*-----CAT WALK------*/
+
+.spritecat {
+	width: 500px;
+	height: 409px;
+	display: block;
+	background: transparent url('..//img/icon-s9bbd2a66ef.png') 0 0 no-repeat;
+	// background-size: 200px 244px;
+	@include animation(trotting 2s steps(14) 1.29);
+}
+
+@include keyframes(trotting) {
+	0% {background-position: 0 0}
+	100% {background-position: 0 -5726px}
+}
+
+.moving {
+	@include animation(catwalk 2s 1 linear both);
+}
+
+@include keyframes(catwalk) {
+	from{transform: translateX(0px);}
+    to{transform: translateX(500px);}
+}
+
+
+/********PLACEHOLDER BALL*********/
+// .wrapper {
+// 	// margin: auto;
+// 	// width: 800px;
+// 	// margin-top: 35vh;
+// 	position: relative;
+// }
+
+// .ball {
+// 	position: relative;
+// 	top: 20px;
+// 	left: 20px;
+
+// 	// animation-name: move;
+// 	// animation-duration: 1s;
+// 	// animation-timing-function: linear;
+// 	// animation-iteration-count: infinite;
+// 	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
+// 	@include animation(catwalk 2s 1 ease-in both);
+// }
+
+/********PLACEHOLDER CAT*********/
+// .sprite {
+// 	width: 400px;
+// 	height: 200px;
+// 	display: block;
+// 	background: transparent url('..//img/cat.png') 0 0 no-repeat;
+// 	// margin: 1em auto;
+// 	@include animation(walkin 2s steps(12) infinite);
+// }
+
+// @include keyframes(walkin) {
+// 	0% {background-position: 0 0}
+// 	100% {background-position: 0 -2400px}
+// }
 

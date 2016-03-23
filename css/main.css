@@ -1,4 +1,65 @@
 /*VARIABLES*/
+.icon-sprite, .icon-cat02, .icon-cat03, .icon-cat04, .icon-cat05, .icon-cat06, .icon-cat07, .icon-cat08, .icon-cat09, .icon-cat10, .icon-cat11, .icon-cat12, .icon-cat13, .icon-cat14, .icon-cat15 {
+  background-image: url('../img/icon-s9bbd2a66ef.png');
+  background-repeat: no-repeat;
+}
+
+.icon-cat02 {
+  background-position: 0 0;
+}
+
+.icon-cat03 {
+  background-position: 0 -409px;
+}
+
+.icon-cat04 {
+  background-position: 0 -818px;
+}
+
+.icon-cat05 {
+  background-position: 0 -1227px;
+}
+
+.icon-cat06 {
+  background-position: 0 -1636px;
+}
+
+.icon-cat07 {
+  background-position: 0 -2045px;
+}
+
+.icon-cat08 {
+  background-position: 0 -2454px;
+}
+
+.icon-cat09 {
+  background-position: 0 -2863px;
+}
+
+.icon-cat10 {
+  background-position: 0 -3272px;
+}
+
+.icon-cat11 {
+  background-position: 0 -3681px;
+}
+
+.icon-cat12 {
+  background-position: 0 -4090px;
+}
+
+.icon-cat13 {
+  background-position: 0 -4499px;
+}
+
+.icon-cat14 {
+  background-position: 0 -4908px;
+}
+
+.icon-cat15 {
+  background-position: 0 -5317px;
+}
+
 *,
 *:before,
 *:after {
@@ -10,29 +71,105 @@
 .sky {
   background: #62b0d2;
   height: 50vh;
-  z-index: -1;
-  max-width: 100%;
+  z-index: -10;
+  max-width: 1350vh;
 }
 
 .grass {
   background: #478e50;
   height: 50vh;
-  z-index: -1;
-  max-width: 100%;
+  z-index: -10;
+  max-width: 1350vh;
 }
 
-/*-----BALL SLIDE/CAT WALK------*/
-.wrapper {
-  position: relative;
+/*-----CLOUDS------*/
+.cloud {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  background: transparent url("..//img/cloud.png") 0 0 no-repeat;
+  background-size: 308px 200px;
 }
 
-.ball {
-  position: relative;
-  top: 20px;
-  left: 20px;
-  -moz-animation: catwalk 2s 1 ease-in both;
-  -webkit-animation: catwalk 2s 1 ease-in both;
-  animation: catwalk 2s 1 ease-in both;
+.cloud1 {
+  top: 10px;
+  z-index: 100;
+  -moz-animation: driftin 10s linear infinite;
+  -webkit-animation: driftin 10s linear infinite;
+  animation: driftin 10s linear infinite;
+}
+
+.cloud2 {
+  top: 40px;
+  z-index: 200;
+  -moz-animation: driftin 15s linear infinite backwards;
+  -webkit-animation: driftin 15s linear infinite backwards;
+  animation: driftin 15s linear infinite backwards;
+}
+
+@-moz-keyframes driftin {
+  from {
+    transform: translateX(2000px);
+  }
+  to {
+    transform: translateX(-500px);
+  }
+}
+@-webkit-keyframes driftin {
+  from {
+    transform: translateX(2000px);
+  }
+  to {
+    transform: translateX(-500px);
+  }
+}
+@keyframes driftin {
+  from {
+    transform: translateX(2000px);
+  }
+  to {
+    transform: translateX(-500px);
+  }
+}
+/*-----CAT WALK------*/
+.spritecat {
+  width: 500px;
+  height: 409px;
+  display: block;
+  background: transparent url("..//img/icon-s9bbd2a66ef.png") 0 0 no-repeat;
+  -moz-animation: trotting 2s steps(14) 1.29;
+  -webkit-animation: trotting 2s steps(14) 1.29;
+  animation: trotting 2s steps(14) 1.29;
+}
+
+@-moz-keyframes trotting {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -5726px;
+  }
+}
+@-webkit-keyframes trotting {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -5726px;
+  }
+}
+@keyframes trotting {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -5726px;
+  }
+}
+.moving {
+  -moz-animation: catwalk 2s 1 linear both;
+  -webkit-animation: catwalk 2s 1 linear both;
+  animation: catwalk 2s 1 linear both;
 }
 
 @-moz-keyframes catwalk {
@@ -59,51 +196,5 @@
     transform: translateX(500px);
   }
 }
-/*-----CLOUDS------*/
-.cloud {
-  width: 100%;
-  height: 200px;
-  position: absolute;
-  background: transparent url("..//img/cloud.png") 0 0 no-repeat;
-}
-
-.cloud1 {
-  top: 10px;
-  z-index: 100;
-  -moz-animation: driftin 10s linear infinite;
-  -webkit-animation: driftin 10s linear infinite;
-  animation: driftin 10s linear infinite;
-}
-
-.cloud2 {
-  top: 40px;
-  z-index: 200;
-  -moz-animation: driftin 15s linear infinite backwards;
-  -webkit-animation: driftin 15s linear infinite backwards;
-  animation: driftin 15s linear infinite backwards;
-}
-
-@-moz-keyframes driftin {
-  from {
-    transform: translateX(-1000px);
-  }
-  to {
-    transform: translateX(1550px);
-  }
-}
-@-webkit-keyframes driftin {
-  from {
-    transform: translateX(-1000px);
-  }
-  to {
-    transform: translateX(1550px);
-  }
-}
-@keyframes driftin {
-  from {
-    transform: translateX(-1000px);
-  }
-  to {
-    transform: translateX(1550px);
-  }
-}
+/********PLACEHOLDER BALL*********/
+/********PLACEHOLDER CAT*********/
