@@ -68,6 +68,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 .sky {
   background: #62b0d2;
   height: 50vh;
@@ -86,7 +90,6 @@
 .cloud {
   width: 100%;
   height: 200px;
-  position: absolute;
   background: transparent url("..//img/cloud.png") 0 0 no-repeat;
   background-size: 308px 200px;
 }
@@ -94,22 +97,23 @@
 .cloud1 {
   top: 10px;
   z-index: 100;
-  -moz-animation: driftin 10s linear infinite;
-  -webkit-animation: driftin 10s linear infinite;
-  animation: driftin 10s linear infinite;
+  -moz-animation: driftin 22s linear infinite;
+  -webkit-animation: driftin 22s linear infinite;
+  animation: driftin 22s linear infinite;
 }
 
 .cloud2 {
   top: 40px;
   z-index: 200;
-  -moz-animation: driftin 15s linear infinite backwards;
-  -webkit-animation: driftin 15s linear infinite backwards;
-  animation: driftin 15s linear infinite backwards;
+  transform: scale(1.2);
+  -moz-animation: driftin 30s linear 2s infinite backwards;
+  -webkit-animation: driftin 30s linear 2s infinite backwards;
+  animation: driftin 30s linear 2s infinite backwards;
 }
 
 @-moz-keyframes driftin {
   from {
-    transform: translateX(2000px);
+    transform: translateX(1800px);
   }
   to {
     transform: translateX(-500px);
@@ -117,7 +121,7 @@
 }
 @-webkit-keyframes driftin {
   from {
-    transform: translateX(2000px);
+    transform: translateX(1800px);
   }
   to {
     transform: translateX(-500px);
@@ -125,7 +129,7 @@
 }
 @keyframes driftin {
   from {
-    transform: translateX(2000px);
+    transform: translateX(1800px);
   }
   to {
     transform: translateX(-500px);
@@ -137,11 +141,12 @@
   height: 409px;
   display: block;
   background: transparent url("..//img/icon-s9bbd2a66ef.png") 0 0 no-repeat;
-  -moz-animation: trotting 2s steps(14) 1.29;
-  -webkit-animation: trotting 2s steps(14) 1.29;
-  animation: trotting 2s steps(14) 1.29;
+  -moz-animation: trotting 3s steps(14) infinite;
+  -webkit-animation: trotting 3s steps(14) infinite;
+  animation: trotting 3s steps(14) infinite;
 }
 
+/*sprite animation*/
 @-moz-keyframes trotting {
   0% {
     background-position: 0 0;
@@ -167,33 +172,72 @@
   }
 }
 .moving {
-  -moz-animation: catwalk 2s 1 linear both;
-  -webkit-animation: catwalk 2s 1 linear both;
-  animation: catwalk 2s 1 linear both;
+  -moz-animation: catwalk 30s 1 linear forwards;
+  -webkit-animation: catwalk 30s 1 linear forwards;
+  animation: catwalk 30s 1 linear forwards;
+}
+
+.flipit {
+  -moz-animation: flip 0.1s 12s both;
+  -webkit-animation: flip 0.1s 12s both;
+  animation: flip 0.1s 12s both;
 }
 
 @-moz-keyframes catwalk {
-  from {
-    transform: translateX(0px);
+  0% {
+    transform: translateX(-500px);
   }
-  to {
-    transform: translateX(500px);
+  40% {
+    transform: translateX(1500px);
+  }
+  100% {
+    transform: translateX(-2000px);
   }
 }
 @-webkit-keyframes catwalk {
-  from {
-    transform: translateX(0px);
+  0% {
+    transform: translateX(-500px);
   }
-  to {
-    transform: translateX(500px);
+  40% {
+    transform: translateX(1500px);
+  }
+  100% {
+    transform: translateX(-2000px);
   }
 }
 @keyframes catwalk {
-  from {
-    transform: translateX(0px);
+  0% {
+    transform: translateX(-500px);
   }
-  to {
-    transform: translateX(500px);
+  40% {
+    transform: translateX(1500px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+@-moz-keyframes flip {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(-1);
+  }
+}
+@-webkit-keyframes flip {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(-1);
+  }
+}
+@keyframes flip {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(-1);
   }
 }
 /********PLACEHOLDER BALL*********/

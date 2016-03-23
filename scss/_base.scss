@@ -9,6 +9,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	overflow: hidden;
+}
+
 // .base {
 //   	@include background-image(linear-gradient($sky-color 50%, $ground-color 50%));
 //   		// http://compass-style.org/examples/compass/css3/gradient/
@@ -35,7 +39,7 @@
 .cloud {
 	width: 100%;
 	height: 200px;
-	position: absolute;
+	// position: absolute;
 	background: transparent url('..//img/cloud.png') 0 0 no-repeat;
 	background-size: 308px 200px;
 }
@@ -44,18 +48,19 @@
 	top: 10px;
 	z-index: 100;
 	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
-	@include animation(driftin 10s linear infinite)
+	@include animation(driftin 22s linear infinite)
 }
 
 .cloud2 {
 	top: 40px;
 	z-index: 200;
+	transform: scale(1.2);
 	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
-	@include animation(driftin 15s linear infinite backwards)
+	@include animation(driftin 30s linear 2s infinite backwards)
 }
 
 @include keyframes(driftin) {
-	from{transform: translateX(2000px);}
+	from{transform: translateX(1800px);}
     to{transform: translateX(-500px);}
 }
 
@@ -67,23 +72,48 @@
 	height: 409px;
 	display: block;
 	background: transparent url('..//img/icon-s9bbd2a66ef.png') 0 0 no-repeat;
-	// background-size: 200px 244px;
-	@include animation(trotting 2s steps(14) 1.29);
+	@include animation(trotting 3s steps(14) infinite);
 }
 
+/*sprite animation*/
 @include keyframes(trotting) {
 	0% {background-position: 0 0}
 	100% {background-position: 0 -5726px}
 }
 
 .moving {
-	@include animation(catwalk 2s 1 linear both);
+	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
+	@include animation(catwalk 30s 1 linear forwards);
+	// @include animation(flip 2s 1 2s both);
+	// @include animation(catwalk,flip 3s,.1s 1,1 linear,linear 0s,4s 1,1 both);
 }
 
-@include keyframes(catwalk) {
-	from{transform: translateX(0px);}
-    to{transform: translateX(500px);}
+.flipit {
+	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
+	@include animation(flip .1s  12s both);
 }
+
+// @include keyframes(catwalk) {
+// 	0% {transform: translateX(-500px);}
+// 	49% {transform: translateX(2000px);}
+// 	50% {transform: scaleX(-1);}
+// 	// 51% {transform: translateX(2000px);}
+// 	100% {transform: translateX(-500px);}
+// 	// 100% {transform: scaleX(-1);}
+// }
+
+@include keyframes(catwalk) {
+	0% {transform: translateX(-500px);}
+    40% {transform: translateX(1500px);}
+    100% {transform: translateX(-2000px);}
+}
+
+@include keyframes(flip) {
+	0% {transform: scaleX(1);}
+	100% {transform: scaleX(-1);}
+}
+
+
 
 
 /********PLACEHOLDER BALL*********/
