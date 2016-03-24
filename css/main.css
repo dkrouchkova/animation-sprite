@@ -73,15 +73,15 @@ html {
 }
 
 .sky {
-  background: #62b0d2;
-  height: 50vh;
+  background: transparent url("..//img/sky-bkg.png") 0 0 no-repeat;
+  height: 60vh;
   z-index: -10;
   max-width: 1350vh;
 }
 
 .grass {
-  background: #478e50;
-  height: 50vh;
+  background: transparent url("..//img/grass-txtr.png") 0 0 no-repeat;
+  height: 40vh;
   z-index: -10;
   max-width: 1350vh;
 }
@@ -90,25 +90,35 @@ html {
 .cloud {
   width: 100%;
   height: 200px;
-  background: transparent url("..//img/cloud.png") 0 0 no-repeat;
-  background-size: 308px 200px;
 }
 
 .cloud1 {
-  top: 10px;
+  top: 30px;
   z-index: 100;
-  -moz-animation: driftin 22s linear infinite;
-  -webkit-animation: driftin 22s linear infinite;
-  animation: driftin 22s linear infinite;
+  position: absolute;
+  background: transparent url("..//img/cloud1.png") 0 0 no-repeat;
+  -moz-animation: driftin 30s linear infinite;
+  -webkit-animation: driftin 30s linear infinite;
+  animation: driftin 30s linear infinite;
 }
 
 .cloud2 {
-  top: 40px;
+  margin-top: 80px;
   z-index: 200;
   transform: scale(1.2);
-  -moz-animation: driftin 30s linear 2s infinite backwards;
-  -webkit-animation: driftin 30s linear 2s infinite backwards;
-  animation: driftin 30s linear 2s infinite backwards;
+  background: transparent url("..//img/cloud2.png") 0 0 no-repeat;
+  -moz-animation: driftin 45s linear 2s infinite backwards;
+  -webkit-animation: driftin 45s linear 2s infinite backwards;
+  animation: driftin 45s linear 2s infinite backwards;
+}
+
+.cloud3 {
+  top: 10px;
+  z-index: 50;
+  background: transparent url("..//img/cloud3.png") 0 0 no-repeat;
+  -moz-animation: driftin 85s linear infinite;
+  -webkit-animation: driftin 85s linear infinite;
+  animation: driftin 85s linear infinite;
 }
 
 @-moz-keyframes driftin {
@@ -141,9 +151,9 @@ html {
   height: 409px;
   display: block;
   background: transparent url("..//img/icon-s9bbd2a66ef.png") 0 0 no-repeat;
-  -moz-animation: trotting 3s steps(14) infinite;
-  -webkit-animation: trotting 3s steps(14) infinite;
-  animation: trotting 3s steps(14) infinite;
+  -moz-animation: trotting 2s steps(14) infinite;
+  -webkit-animation: trotting 2s steps(14) infinite;
+  animation: trotting 2s steps(14) infinite;
 }
 
 /*sprite animation*/
@@ -171,6 +181,18 @@ html {
     background-position: 0 -5726px;
   }
 }
+.mouse {
+  width: 400px;
+  height: 200px;
+  top: 71vh;
+  position: absolute;
+  transform: translateX(1900px) scale(0.5);
+  background: transparent url("..//img/mouse.png") 0 0 no-repeat;
+  -moz-animation: mouse 11s 1 linear 26s forwards;
+  -webkit-animation: mouse 11s 1 linear 26s forwards;
+  animation: mouse 11s 1 linear 26s forwards;
+}
+
 .moving {
   -moz-animation: catwalk 30s 1 linear forwards;
   -webkit-animation: catwalk 30s 1 linear forwards;
@@ -178,17 +200,17 @@ html {
 }
 
 .flipit {
-  -moz-animation: flip 0.1s 12s both;
-  -webkit-animation: flip 0.1s 12s both;
-  animation: flip 0.1s 12s both;
+  -moz-animation: flip 0.1s 15.8s both;
+  -webkit-animation: flip 0.1s 15.8s both;
+  animation: flip 0.1s 15.8s both;
 }
 
 @-moz-keyframes catwalk {
   0% {
     transform: translateX(-500px);
   }
-  40% {
-    transform: translateX(1500px);
+  70% {
+    transform: translateX(1900px);
   }
   100% {
     transform: translateX(-2000px);
@@ -198,8 +220,8 @@ html {
   0% {
     transform: translateX(-500px);
   }
-  40% {
-    transform: translateX(1500px);
+  70% {
+    transform: translateX(1900px);
   }
   100% {
     transform: translateX(-2000px);
@@ -209,8 +231,32 @@ html {
   0% {
     transform: translateX(-500px);
   }
-  40% {
-    transform: translateX(1500px);
+  70% {
+    transform: translateX(1900px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+@-moz-keyframes mouse {
+  0% {
+    transform: translateX(1901px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+@-webkit-keyframes mouse {
+  0% {
+    transform: translateX(1901px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+@keyframes mouse {
+  0% {
+    transform: translateX(1901px);
   }
   100% {
     transform: translateX(-2000px);
@@ -240,5 +286,3 @@ html {
     transform: scaleX(-1);
   }
 }
-/********PLACEHOLDER BALL*********/
-/********PLACEHOLDER CAT*********/
