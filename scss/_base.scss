@@ -1,6 +1,4 @@
-@import '..//img/cat/icon/*.png';
-@include all-icon-sprites;
-@import '..//img/mouse/icon/*.png';
+@import 'icon/*.png';
 @include all-icon-sprites;
 
 *,
@@ -75,7 +73,7 @@ html {
 	height: 409px;
 	display: block;
 	// transform: translateX(-100px);
-	background: transparent url('..//img/cat/icon-s9bbd2a66ef.png') 0 0 no-repeat;
+	background: transparent url('..//img/icon-s9bbd2a66ef.png') 0 0 no-repeat;
 	@include animation(trotting 2s steps(14) infinite);
 }
 
@@ -92,7 +90,7 @@ html {
 	position: absolute;
 	// background-size: 100px 50px;
 	transform: translateX(1900px) scale(.5);
-	background: transparent url('..//img/mouse.png') 0 0 no-repeat;
+	background: transparent url('..//img/mouse.gif') 0 0 no-repeat;
 	// animation syntax shorthand: name duration timing-function delay iteration-count direction fill-mode
 	@include animation(mouse 11s 1 linear 26s forwards);
 }
