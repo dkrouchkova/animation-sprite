@@ -1,6 +1,6 @@
 /*VARIABLES*/
-.icon-sprite, .icon-cat02, .icon-cat03, .icon-cat04, .icon-cat05, .icon-cat06, .icon-cat07, .icon-cat08, .icon-cat09, .icon-cat10, .icon-cat11, .icon-cat12, .icon-cat13, .icon-cat14, .icon-cat15 {
-  background-image: url('../img/icon-s9bbd2a66ef.png');
+.icon-sprite, .icon-cat02, .icon-cat03, .icon-cat04, .icon-cat05, .icon-cat06, .icon-cat07, .icon-cat08, .icon-cat09, .icon-cat10, .icon-cat11, .icon-cat12, .icon-cat13, .icon-cat14, .icon-cat15, .icon-mouse01, .icon-mouse02, .icon-mouse03, .icon-mouse04, .icon-mouse05, .icon-mouse06, .icon-mouse07, .icon-mouse08, .icon-mouse09 {
+  background-image: url('../img/..//img/cat/icon-seeb727cae5.png');
   background-repeat: no-repeat;
 }
 
@@ -58,6 +58,47 @@
 
 .icon-cat15 {
   background-position: 0 -5317px;
+}
+
+.icon-sprite, .icon-cat02, .icon-cat03, .icon-cat04, .icon-cat05, .icon-cat06, .icon-cat07, .icon-cat08, .icon-cat09, .icon-cat10, .icon-cat11, .icon-cat12, .icon-cat13, .icon-cat14, .icon-cat15, .icon-mouse01, .icon-mouse02, .icon-mouse03, .icon-mouse04, .icon-mouse05, .icon-mouse06, .icon-mouse07, .icon-mouse08, .icon-mouse09 {
+  background-image: url('../img/..//img/mouse/icon-sab8b29573c.png');
+  background-repeat: no-repeat;
+}
+
+.icon-mouse01 {
+  background-position: 0 0;
+}
+
+.icon-mouse02 {
+  background-position: 0 -200px;
+}
+
+.icon-mouse03 {
+  background-position: 0 -400px;
+}
+
+.icon-mouse04 {
+  background-position: 0 -600px;
+}
+
+.icon-mouse05 {
+  background-position: 0 -800px;
+}
+
+.icon-mouse06 {
+  background-position: 0 -1000px;
+}
+
+.icon-mouse07 {
+  background-position: 0 -1200px;
+}
+
+.icon-mouse08 {
+  background-position: 0 -1400px;
+}
+
+.icon-mouse09 {
+  background-position: 0 -1600px;
 }
 
 *,
@@ -150,7 +191,7 @@ html {
   width: 500px;
   height: 409px;
   display: block;
-  background: transparent url("..//img/icon-s9bbd2a66ef.png") 0 0 no-repeat;
+  background: transparent url("..//img/cat/icon-s9bbd2a66ef.png") 0 0 no-repeat;
   -moz-animation: trotting 2s steps(14) infinite;
   -webkit-animation: trotting 2s steps(14) infinite;
   animation: trotting 2s steps(14) infinite;
